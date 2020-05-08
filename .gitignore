@@ -3,6 +3,9 @@
 /public/storage
 /storage/*.key
 /vendor
+.idea/
+/.editorconfig
+.gitattributes
 .Ds_Store
 .env
 .env.backup
