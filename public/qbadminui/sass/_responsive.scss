@@ -1,0 +1,37 @@
+ 
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+    @media only screen and (min-width : 576px){
+        button.close{
+            position: unset;
+        }
+    }
+   @media only screen and (min-width: 768px) {
+        // Bootstrap classes
+        .border-md-right{
+            border-right: 1px solid $light!important;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        .page-active{
+            filter: unset;
+            -webkit-filter: unset;
+        }
+        .body-active{
+            overflow: unset;
+        }
+        .side-bar-lg-active{
+            visibility: visible;
+            transition: all ease 0.5s;
+            left: 0;
+            overflow: auto;
+            left: 0;
+            top: 0;
+        }
+        .main-full-body,.footer-full-body{
+            width: calc( 100% - 70px - 200px )!important;
+        }
+    }

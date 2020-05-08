@@ -1,0 +1,40 @@
+   /* Navber section */
+.navbar-brand{
+    cursor: pointer;
+}
+.navbar-brand{
+    span{
+        height: 1px;
+        background: $text-secondary-light !important;
+        width: 30px;
+        display: block;
+        margin-bottom: 6px;
+    }
+    
+}
+.navbar-brand{
+    span:nth-child(2n){
+        height: 3px;
+    }
+    
+}
+.profile-avatar{
+    width: 50%;
+    border-radius: 50%;
+    margin-top: -0.2rem;
+}
+.search-round {
+    input{
+        background: transparent;
+        border-radius: 25px 0 0 25px!important;
+    }
+    
+}
+.search-round{
+    .input-group-append{
+        button{
+            border-radius: 0 25px 25px 0!important;
+        }
+    }
+    
+}

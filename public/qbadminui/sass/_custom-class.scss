@@ -1,0 +1,118 @@
+/* Custom classes */
+.page-active{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transition: all ease 0.5s!important;
+}
+.body-active{
+    overflow: hidden;
+}
+.w-15{
+    width: 15%!important;
+}
+.w-10{
+    width: 10%!important;
+}
+.clear{
+    overflow: hidden!important;
+}
+.border-radius-none{
+    border-radius: unset!important;
+}
+.d-contents{
+    display: contents!important;;
+}
+.dropdown-menu-max-height{
+    max-height: 15rem!important;
+    overflow: auto!important;
+}
+.img-round{
+    object-fit: cover!important;
+    object-position: center!important;
+    border-radius: 50%!important;
+}
+.rounded{
+    border-radius: 5rem!important;
+}
+.rounded-lg{
+    border-radius: 0.6rem!important;
+}
+.dropdown-arow-none > .dropdown-toggle:after,.dropdown-arow-none > .dropdown-toggle:before{
+    content: unset!important;
+}
+    /* Text color */
+.text-secondary-light{
+    color: $text-secondary-light!important;
+}
+.card-icon-bg-primary{
+    color: $card-icon-bg-primary;
+}
+.text-muted {
+    color: $text-muted!important;
+}
+/*Background */
+.bg-primary-c{
+    background: $bg-primary-c!important;
+}
+.box-shadow-none{
+    box-shadow: unset!important;
+}
+.background-none{
+    background: unset;
+}
+.bg-none{
+    background: unset!important;
+}
+
+
+
+//Alert 
+.alert-card{
+    border: unset!important;
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 #ced4da;
+}
+//primary custom alert
+.alert-card.alert-primary{
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $primary!important;
+}
+//success custom alert
+.alert-card.alert-success{
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $success!important;
+}
+//info custom alert
+.alert-card.alert-info{
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $info!important;
+}
+//warning custom alert
+.alert-card.alert-warning{
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $warning!important;
+}
+//danger custom alert
+.alert-card.alert-danger{
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $danger!important;
+}
+
+// Accordin
+.accordin-card{
+    box-shadow: unset!important;
+    border: unset!important;
+}
+.accordion-right-icon a::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f078";
+    margin: 0 8px;
+    float: right;
+    position: absolute;
+    right: 15px;
+}
+.accordion-right-icon a.collapsed::after{
+    content: "\f077";
+}
+// input elements
+.input-icon{
+    position: absolute;
+    top: 2.3rem;
+    right: 1.5rem;
+    color: $text-secondary-light;
+}

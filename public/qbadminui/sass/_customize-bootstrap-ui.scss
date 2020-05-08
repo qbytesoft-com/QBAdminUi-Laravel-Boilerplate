@@ -1,0 +1,287 @@
+/* Customize bootstrap classes */
+.dropdown-menu{
+    margin: 0.125rem 1rem 0!important;
+}
+label{
+    font-size: 12px!important;
+}
+// All color
+$all-color : ("primary" : $primary, "success" : $success, "warning" : $warning, "info" : $info, "danger" : $danger);
+
+// Backgroung color mixing
+@mixin bg-color($name,$value) {
+    .bg-#{$name}{
+        background-color: $value!important;
+    }
+}
+// all background color
+@each $name,$value in $all-color  {
+    @include bg-color($name, $value);
+}
+// .input-group-append{
+//     & span{
+//         font-size: 12px!important;;
+//     }
+// }
+@mixin text-color($name,$value) {
+    .text-#{$name}{
+        color: $value!important;
+    }
+}
+// text color loop
+@each $name, $value in $all-color {
+    @include text-color($name,$value)
+}
+.dropdown-item{
+    color: $primary;
+}
+.dropdown-item.active, .dropdown-item:active,.page-item.active .page-link,.list-group-item.active{
+    background-color: $primary!important;
+    color: $white!important;
+    border-color: $primary!important;
+}
+.card{
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08)!important;
+}
+    // button
+.btn{
+    font-size: 12px!important;
+}
+    // bootstrap button mixin function
+@mixin bootstrap-btn($name,$color,$shadow) {
+    .#{$name}-btn{
+        @if $name == warning {
+            color: $dark!important;
+        }@else{
+            color: $white!important;
+        }
+        background: $color!important;
+        border-color: $color!important;
+    }
+    .#{$name}-btn-hover-focus{
+        box-shadow: 0 8px 25px -8px $color!important;
+    }
+    .btn-outline-#{$name} {
+        @extend .#{$name}-btn;
+        background: unset!important;
+        color: $color!important;
+    }
+    .btn-#{$name}{
+        @extend .#{$name}-btn;
+    }
+    .btn-#{$name}, .btn-outline-#{$name}{
+        &:hover{
+            @extend .#{$name}-btn;
+            @extend .#{$name}-btn-hover-focus;
+        }
+        
+    }
+    @if $name == warning {
+        .btn-outline-warning{
+            &:hover{
+                color: $white!important;
+            }
+        }
+    }
+    .btn-#{$name}, .btn-outline-#{$name} {
+        &:focus{
+            @extend .#{$name}-btn;
+            @extend .#{$name}-btn-hover-focus;
+        }
+        
+    }
+    .btn-outline-#{$name}{
+        &:focus{
+            @extend .btn-outline-#{$name};
+            @if $name == warning {
+                &:hover{
+                    color: $color!important;
+                }
+            }
+        }
+    }
+    .btn-#{$name}, .btn-outline-#{$name}{
+        &:active{
+            box-shadow: 0 0 0 0.2rem $shadow!important;
+        }
+    }
+}
+// All button list
+$all-bootstrap-btn:
+  "primary" $primary $primary-shadow,
+  "success" $success $success-shadow,
+  "danger" $danger $danger-shadow,
+  "warning" $warning $warning-shadow,
+  "info" $info $info-shadow,
+  "light" $light $light-shadow,
+  "dark" $dark $dark-shadow,
+  "facebook" $facebook-icon,
+  "google" $google-plus-icon,
+  "twitter" $twitter-icon,
+  "instagram" $instagram-icon,
+  "linkedin" $linkedin-icon,
+  "dribble" $dribble-icon,
+  "youtube" $youtube-icon;
+// All btn style
+@each $name, $btn-color, $btn-shadow in $all-bootstrap-btn {
+    @include bootstrap-btn($name,$btn-color,$btn-shadow);
+}
+/* Button raised */
+.btn-raised,.btn-raised,.btn-raised{
+    &:hover,&:focus{
+        box-shadow: unset!important;
+    }
+}
+.btn-icon.rounded-circle{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+    // Alert
+.alert{
+    border-radius: 0.8rem!important;
+}
+@mixin bootstrap-alert($name,$bg,$color,$border) {
+    .alert-#{$name}{
+        background: $bg!important;
+        color: $color!important;
+        border-color: $border!important;
+    }
+}
+// Primary alert
+@include bootstrap-alert("primary",$alert-primary-bg,$alert-primary-text,$alert-primary-border);
+// Success alert
+@include bootstrap-alert("success",$alert-success-bg,$alert-success-text,$alert-success-border);
+// Info alert
+@include bootstrap-alert("info",$alert-info-bg,$alert-info-text,$alert-info-border);
+// Warning alert
+@include bootstrap-alert("warning",$alert-warning-bg,$alert-warning-text,$alert-warning-border);
+// Danger alert
+@include bootstrap-alert("danger",$alert-danger-bg,$alert-danger-text,$alert-danger-border);
+button.close{
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+}
+// Badge
+$all-badge : ("primary" : $primary, "secondary" : $secondary, "success" : $success, "danger" : $danger, "warning" : $warning, "info" : $info, "dark" : $dark);
+.badge{
+    font-weight: 400;
+}
+// All badge bg
+@each $name, $color in $all-badge {
+    .badge-#{$name},.badge-rounded-#{$name},.badge-square-#{$name} {
+        background-color: $color!important;
+    }
+}
+// badge outline
+    // badge outline function
+@mixin badge-outline($name, $value, $color) {
+    .badge-outline-#{$name}{
+        @extend .background-none;
+        border : $value solid $color;
+        color: $color;
+    }
+}
+// all badge outline
+@each $badge-name, $badge-color in $all-badge {
+    @include badge-outline($badge-name,1px,$badge-color);
+}
+// end badge outline
+// Badge rounded
+@mixin badge-style($style,$width-height,$line-height) {
+    @if $style == rounded {
+        border-radius: 50%;
+    }@else if $style == squares{
+        border-radius: 20%;
+    }
+    color: $white;
+    justify-content: center;
+    width: $width-height;
+    height: $width-height;
+    line-height: $line-height;
+    @if $width-height > 50px {
+        font-size: 1rem;
+    }
+}
+    //sm
+.badge-rounded-primary,.badge-rounded-success,.badge-rounded-danger,.badge-rounded-warning,.badge-rounded-info,.badge-rounded-dark{
+    @include badge-style("rounded",25px,20px);
+}
+    // lg
+.badge-rounded-primary.lg,.badge-rounded-success.lg,.badge-rounded-danger.lg,.badge-rounded-warning.lg,.badge-rounded-info.lg,.badge-rounded-dark.lg{
+    @include badge-style("rounded",40px,35px);
+    font-size: 1rem!important;
+}
+    //xl
+.badge-rounded-primary.xl,.badge-rounded-success.xl,.badge-rounded-danger.xl,.badge-rounded-warning.xl,.badge-rounded-info.xl,.badge-rounded-dark.xl{
+    @include badge-style("rounded",50px,45px);
+    font-size: 1rem!important;
+}
+// Badge squary
+    // sm
+.badge-square-primary,.badge-square-success,.badge-square-danger,.badge-square-warning,.badge-square-info,.badge-square-dark{
+    @include badge-style("squares",25px,20px);
+}
+    //lg
+.badge-square-primary.lg,.badge-square-success.lg,.badge-square-danger.lg,.badge-square-warning.lg,.badge-square-info.lg,.badge-square-dark.lg{
+    @include badge-style("squares",40px,35px);
+    font-size: 1rem!important;
+}
+    // Xl
+.badge-square-primary.xl,.badge-square-success.xl,.badge-square-danger.xl,.badge-square-warning.xl,.badge-square-info.xl,.badge-square-dark.xl{
+    @include badge-style("squares",50px,45px);
+    font-size: 1rem!important;
+}
+
+// Tab component
+.nav-pills{
+    .nav-link.active,.show > .nav-link{
+        color: $white!important;
+        background-color: $primary!important;
+    }
+}
+
+//Form component
+    // Checkbox
+.custom-control-input:checked~.custom-control-label::before{
+    border-color: $primary!important;
+    background-color: $primary!important;
+}
+.custom-control input[type="checkbox"]:focus{
+    border: $primary-shadow;
+    box-shadow: $primary-shadow;
+}
+
+    //form control
+.form-control:focus{
+    border-color: $primary;
+    box-shadow: 0 0 0 0.2rem $primary-shadow!important;
+}
+.form-text {
+    font-size: 10px!important;
+}
+
+// Progressbar
+.progress-bar{
+    background-color: $primary;
+}
+// list
+.list-group-item-action{
+    color: $dark!important;
+}
+// table
+.table-primary, .table-primary>td, .table-primary>th{
+    background-color: rgba($color: $primary, $alpha: 0.2);
+}
+// card
+.card-title{
+    font-size: 1.1rem!important;
+}
+// Modal
+.modal-dialog{
+    transform: scale(0)!important;
+}
+.modal.show .modal-dialog{
+    transform: scale(1)!important;
+}

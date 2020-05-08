@@ -1,0 +1,13 @@
+/* Notification badge */
+.notification-badge{
+    top: -0.1rem;
+    right: 0.8rem;
+    border-radius: 2rem;
+}
+/* Dropdown menu notification area */
+.notification-icon{
+    background: $notification-icon!important;
+    min-width: 4rem!important;
+    width: 4rem!important;
+    text-align: center!important;
+}

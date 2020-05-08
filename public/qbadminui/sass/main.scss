@@ -1,0 +1,38 @@
+
+   /* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body{
+    font-size: .8rem;
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    color: #639!important;
+    text-decoration: none!important;
+}
+p{
+    // font-size: 0.9rem!important;
+}
+img{
+    object-fit: contain!important;
+    object-position: center!important;
+}
+input::placeholder{
+    font-size: 12px;
+}
+
+@import "./pre-write",
+        "./variable",
+        "./custom-class",
+        "./custom-elements",
+        "./mixin",
+        "./customize-bootstrap-ui",
+        "./theme-option",
+        "./sidebar",
+        "./navbar",
+        "./notification",
+        "./main-section",
+        "./login-page",
+        "./404",
+        "./responsive",
+        "./footer";

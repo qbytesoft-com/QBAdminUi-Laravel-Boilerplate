@@ -1,0 +1,152 @@
+/* The sidebar */
+.side-bar{
+    background: $side-menu-bg-primary!important;
+    height: 100vh!important;
+    width: 17rem!important;
+    visibility: hidden;
+    position: fixed!important;
+    left: -100rem;
+    top: 4rem;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: all ease 0.5s;
+    z-index: 99;
+    overflow: auto;
+    & .side-menu-brand{
+        flex-direction: column!important;
+        align-items: center!important;
+        & .brand-name{
+            color: $white!important;
+            font-size: 1.5rem;
+        }
+        & .brand-img{
+            width: 20%;
+        }
+    } 
+    & .the_menu{
+        padding-bottom: 5rem!important;
+        & .side-menu-heading{
+            color: $white!important;
+            border-bottom: 1px solid $white!important;
+            & a{
+                color: $white!important;
+            }
+        }
+        & .side-menu{
+            list-style: none!important;
+        }
+    }
+    
+    & .side-menu-item,.side-sub-menu-item{
+        a{
+            font-size: 0.9rem!important;
+            display: block;
+            color: $white!important;
+            transition: all ease 0.3s;
+            position: relative!important;
+        }
+        
+    }
+    
+    & .side-menu-item {
+        & a{
+            &::after{
+                content: "";
+                width: 0.6rem;
+                height: 0.6rem;
+                border-radius: 50%;
+                border:2px solid $white;
+                position: absolute;
+                top: 1.5rem;
+                left: 0;
+            }
+            &:hover{
+                padding-left: 2rem!important;
+            }
+        }
+    }
+    & .side-sub-menu{
+        list-style: none;
+    }
+    
+    & .side-sub-menu-item{
+        a{
+            border-left: 2px solid transparent;
+            padding : {
+                top: 0.50rem!important;
+                bottom: 0.50rem!important;;
+            }
+            &:hover{
+                border-color: $white!important;
+            }
+        }
+    }
+    & .sub-menu-parent{
+        position: relative!important;
+    }
+    & .sub-menu-parent{
+        &::before{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f107";
+            color: $white;
+            position: absolute;
+            top: 1rem;
+            right: 0;
+        }
+    }
+}
+
+@media only screen and (max-width : 991px){
+    .side-bar-sm-active{
+        visibility: visible;
+        transition: all ease 0.5s;
+        left: 0;
+        overflow: auto;
+    }
+}
+
+
+
+
+// Sidebar light theme
+.side-bar[data-theme="light"]{
+    &{
+        background: $white!important;
+    }
+    & .brand-name{
+        color: $dark!important;
+    }
+    & .side-menu-heading{
+        color: $dark!important;
+        border-bottom: 1px solid $dark!important;
+        & a{
+            color: $dark!important;
+        }
+    }
+    & .side-menu-item,.side-sub-menu-item{
+        & a{
+            color: $dark!important;
+        }
+        
+    }
+    & .side-menu-item a{
+        &::after{
+            border:2px solid $dark;
+        }
+        
+    }
+    & .side-sub-menu-item{
+        a{
+            border-left: 2px solid $white!important;
+            &:hover{
+                border-color: $primary!important;
+                color: $primary!important;
+            }
+        }
+    }
+    & .sub-menu-parent{
+        &::before{
+            color: $dark;
+        }
+    }
+}
