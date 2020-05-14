@@ -38,7 +38,7 @@
     <script src="{{ asset('qbadminui/js/vendor/eChart/echarts.min.js') }}"></script>
     <script src="{{ asset('qbadminui/js/vendor/eChart/echarts.option.min.js') }}"></script>
     <!-- eChart script -->
-    <script src="{{ asset('qbadminui/js/plugins scripts/echart_drw.js') }}"></script>
+    <script src="{{ asset('qbadminui/js/plugins/echart_drw.js') }}"></script>
     <script src="{{ asset('qbadminui/js/plugins.js') }}"></script>
     <script src="{{ asset('qbadminui/js/main.js') }}"></script>
 </body>

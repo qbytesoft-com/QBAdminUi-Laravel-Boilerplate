@@ -476,7 +476,7 @@
                                                 <tr class="text-center">
                                                     <td><p class="mb-0 font-weight-bold">1</p></td>
                                                     <td><p class="mb-0 font-weight-normal">Smith Doe</p></td>
-                                                    <td><img src="img/profile.jpg" alt="Avatar" class="profile-avatar w-50 mb-0"></td>
+                                                    <td><img src="{{ asset('qbadminui/img/profile.jpg') }}" alt="Avatar" class="profile-avatar w-50 mb-0"></td>
                                                     <td><p class="mb-0 font-weight-normal">Smith@gmail.com</p></td>
                                                     <td><span class="badge badge-success badge-pill">Active</span></td>
                                                     <td class="p-3">
