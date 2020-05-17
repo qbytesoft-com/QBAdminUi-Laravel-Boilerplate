@@ -87,10 +87,10 @@
                         <!-- Sub menu parent -->
                         <li class="side-menu-item px-3"><a href="#" class="w-100 py-3 pl-4 sub-menu-parent" data-toggle="collapse" data-target="#sub_menu_2" aria-expanded="true" aria-controls="sub_menu_2">User Pages</a></li>
                         <!-- Sub menu -->
-                        <div id="sub_menu_2" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="sub_menu_2" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <ul class="side-sub-menu p-0">
                                 <li class="side-sub-menu-item px-3"><a href="blank.html" class="w-100 pl-4 small">Blank Page</a></li>
-                                <li class="side-sub-menu-item px-3"><a href="login.html" class="w-100 pl-4 small">Login</a></li>
+                                <li class="side-sub-menu-item px-3"><a href="login.html" class="w-100 pl-4 small active">Login</a></li>
                                 <li class="side-sub-menu-item px-3"><a href="signup.html" class="w-100 pl-4 small">Register</a></li>
                                 <li class="side-sub-menu-item px-3"><a href="404.html" class="w-100 pl-4 small">404</a></li>
                                 <li class="side-sub-menu-item px-3"><a href="500.html" class="w-100 pl-4 small">500</a></li>
